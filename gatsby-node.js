@@ -3,6 +3,24 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+  const pageLength = 1
+  const pageToPath = (index, pathPrefix, maxPages) => {
+    if (pathPrefix !== null) {
+      pathPrefix = `/${pathPrefix}`
+    } else {
+      pathPrefix = ""
+    }
+
+    if (index === 1) {
+      return `${pathPrefix}/`
+    }
+
+    if (index > 1 && index <= maxPages) {
+      return `${pathPrefix}/${index}`
+    }
+
+    return ""
+  }
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   return graphql(
