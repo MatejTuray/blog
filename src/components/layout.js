@@ -16,6 +16,7 @@ class Layout extends React.Component {
             ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
+            color: `#96281b`,
           }}
         >
           <Link
@@ -23,6 +24,7 @@ class Layout extends React.Component {
               boxShadow: `none`,
               textDecoration: `none`,
               color: `inherit`,
+              backgroundImage: `none`,
             }}
             to={`/`}
           >
@@ -36,6 +38,7 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            color: `#96281b`,
           }}
         >
           <Link
@@ -43,6 +46,7 @@ class Layout extends React.Component {
               boxShadow: `none`,
               textDecoration: `none`,
               color: `inherit`,
+              backgroundImage: `none`,
             }}
             to={`/`}
           >
@@ -63,7 +67,7 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Tento blog poháňa veľký
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>

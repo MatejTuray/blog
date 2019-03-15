@@ -3,7 +3,6 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const pageLength = 1
   const pageToPath = (index, pathPrefix, maxPages) => {
     if (pathPrefix !== null) {
       pathPrefix = `/${pathPrefix}`

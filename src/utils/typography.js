@@ -1,6 +1,7 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
-
+import lincolnTheme from "typography-theme-lincoln"
+import zackliveTheme from "typography-theme-zacklive"
 Wordpress2016.overrideThemeStyles = () => {
   return {
     "a.gatsby-resp-image-link": {
@@ -11,7 +12,7 @@ Wordpress2016.overrideThemeStyles = () => {
 
 delete Wordpress2016.googleFonts
 
-const typography = new Typography(Wordpress2016)
+const typography = new Typography(zackliveTheme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
