@@ -67,6 +67,11 @@ class Layout extends React.Component {
           maxWidth: rhythm(24),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           textShadow: "none",
+          background: `linear-gradient(
+            to right,
+            #e2e2e2,
+            #c9d6ff
+          )`,
         }}
       >
         <header style={{ textShadow: "none" }}>{header}</header>

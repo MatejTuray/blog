@@ -1,7 +1,7 @@
 ---
 title: Pomôž nám Mozilla, si naša jediná nádej!
 date: "2019-04-15"
-tags: ["security", "express", "node.js", "backend"]
+tags: ["express", "node.js", "backend"]
 description: "Bezpečnosť stránok a express.js aplikácií"
 ---
 
