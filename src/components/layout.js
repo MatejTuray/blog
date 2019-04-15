@@ -69,12 +69,14 @@ class Layout extends React.Component {
           textShadow: "none",
         }}
       >
-        <header>{header}</header>
-        <main>{children}</main>
+        <header style={{ textShadow: "none" }}>{header}</header>
+        <main style={{ textShadow: "none" }}>{children}</main>
         <footer style={{ textShadow: "none" }}>
           © {new Date().getFullYear()}, Tento blog poháňa veľký
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a style={{ textShadow: "none" }} href="https://www.gatsbyjs.org">
+            Gatsby
+          </a>
         </footer>
       </div>
     )
