@@ -11,21 +11,21 @@ Platím cez internetbanking, odovzdávam svoje osobné údaje "dôveryhodným tr
 
 Údaje z blogu spoločnosti Mozilla však hovoria o niečom inom:<sup>1</sup>
 
-| Technológia                          | Jún 2017            | Február 2018        | Rozdiel v %     | Rozdiel od apríla 2016 |
-| ------------------------------------ | ------------------- | ------------------- | --------------- | ---------------------- |
-| Content Security Policy (CSP)        | .018% <br/> .043%   | .022%<br/> .112%    | +22% <br/> 161% | 340% <br/> +833%       |
-| Cookies (Secure/HttpOnly)            | 6.50%               | 8.97%               | 38%             | 139%                   |
-| Cross-origin Resource Sharing (CORS) | 96.55%              | 96.89%              | +.35%           | +3.3%                  |
-| HTTPS                                | 45.80%              | 54.31%              | 19%             | 83%                    |
-| HTTP -> HTTPS Redirection            | 14.38% <br/> 22.88% | 21.46% <br/> 32.82% | 49% <br/> 43%   | 324% <br/> 268%        |
-| Public Key Pinning (HPKP)            | 0.71%               | 1.07%               | 51%             | 148%                   |
-| HPKP Preloaded                       | 0.43%               | 0.70%               | 63%             | 71%                    |
-| Strict Transport Security (HSTS)     | 4.37%               | 6.03%               | 38%             | 245%                   |
-| HSTS Preloaded                       | .337%               | .631%               | 87%             | 299%                   |
-| Subresource Integrity (SRI)          | 0.113%              | 0.182%              | 61%             | 1113%                  |
-| X-Content-Type-Options (XCTO)        | 9.41%               | 11.72%              | 21%             | 89%                    |
-| X-Frame-Options (XFO)                | 10.98%              | 12.55%              | 14%             | 84%                    |
-| X-XSS-Protection (XXSSP)             | 8.12%               | 10.36%              | 28%             | 106%                   |
+| Technológia                          | Jún 2017            | Február 2018        |
+| ------------------------------------ | ------------------- | ------------------- |
+| Content Security Policy (CSP)        | .018% <br/> .043%   | .022%<br/> .112%    |
+| Cookies (Secure/HttpOnly)            | 6.50%               | 8.97%               |
+| Cross-origin Resource Sharing (CORS) | 96.55%              | 96.89%              |
+| HTTPS                                | 45.80%              | 54.31%              |
+| HTTP -> HTTPS Redirection            | 14.38% <br/> 22.88% | 21.46% <br/> 32.82% |
+| Public Key Pinning (HPKP)            | 0.71%               | 1.07%               |
+| HPKP Preloaded                       | 0.43%               | 0.70%               |
+| Strict Transport Security (HSTS)     | 4.37%               | 6.03%               |
+| HSTS Preloaded                       | .337%               | .631%               |
+| Subresource Integrity (SRI)          | 0.113%              | 0.182%              |
+| X-Content-Type-Options (XCTO)        | 9.41%               | 11.72%              |
+| X-Frame-Options (XFO)                | 10.98%              | 12.55%              |
+| X-XSS-Protection (XXSSP)             | 8.12%               | 10.36%              |
 
 <small>Spracované podľa zdroja: [https://blog.mozilla.org/security/2018/02/28/analysis-alexa-top-1m-sites-2/](https://blog.mozilla.org/security/2018/02/28/analysis-alexa-top-1m-sites-2/)</small>
 <small>Pozn. autora: Niektoré údaje sú uvedené s rôznymi parametrami</small>
