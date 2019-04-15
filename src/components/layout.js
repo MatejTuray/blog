@@ -17,6 +17,7 @@ class Layout extends React.Component {
             marginBottom: rhythm(1.5),
             marginTop: 0,
             color: `#f50057`,
+            textShadow: "none",
           }}
         >
           <Link
@@ -25,6 +26,7 @@ class Layout extends React.Component {
               textDecoration: `none`,
               color: `inherit`,
               backgroundImage: `none`,
+              textShadow: "none",
             }}
             to={`/`}
           >
@@ -39,6 +41,7 @@ class Layout extends React.Component {
             fontFamily: `Roboto Condensed`,
             marginTop: 0,
             color: `#f50057`,
+            textShadow: "none",
           }}
         >
           <Link
@@ -47,6 +50,7 @@ class Layout extends React.Component {
               textDecoration: `none`,
               color: `inherit`,
               backgroundImage: `none`,
+              textShadow: "none",
             }}
             to={`/`}
           >
@@ -62,11 +66,12 @@ class Layout extends React.Component {
           marginRight: `auto`,
           maxWidth: rhythm(24),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          textShadow: "none",
         }}
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
+        <footer style={{ textShadow: "none" }}>
           © {new Date().getFullYear()}, Tento blog poháňa veľký
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
