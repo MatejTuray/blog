@@ -6,7 +6,19 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { DiscussionEmbed } from "disqus-react"
+import Chip from "@material-ui/core/Chip"
+import { withStyles } from "@material-ui/core/styles"
 
+const styles = theme => ({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  },
+  chip: {
+    margin: theme.spacing.unit,
+  },
+})
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -17,6 +29,7 @@ class BlogPostTemplate extends React.Component {
       identifier: post.id,
       title: post.frontmatter.title,
     }
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -28,12 +41,27 @@ class BlogPostTemplate extends React.Component {
           style={{
             ...scale(-1 / 5),
             display: `block`,
-            marginBottom: rhythm(1),
+            marginBottom: rhythm(0.1),
             marginTop: rhythm(-1),
           }}
         >
           {post.frontmatter.date}
+          <br />
+          {"Dĺžka: " +
+            Math.round(post.fields.readingTime.minutes) +
+            " " +
+            "minúty"}
         </p>
+
+        <ul style={{ marginTop: `1rem` }}>
+          {post.frontmatter.tags.map(tag => (
+            <Chip
+              label={tag}
+              className={this.props.classes.chip}
+              color="secondary"
+            />
+          ))}
+        </ul>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -41,7 +69,6 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Bio />
-
         <ul
           style={{
             display: `flex`,
@@ -72,7 +99,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default withStyles(styles)(BlogPostTemplate)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -90,6 +117,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD.MM.YYYY")
         description
+        tags
+      }
+      fields {
+        slug
+        readingTime {
+          minutes
+        }
       }
     }
   }

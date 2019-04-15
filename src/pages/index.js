@@ -15,14 +15,14 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
+          title="Domov"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div key={node.fields.slug} style={{ marginBottom: "2rem" }}>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
@@ -32,12 +32,13 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
+              <small
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
+              <br />
+              <small>{node.frontmatter.date}</small>
             </div>
           )
         })}

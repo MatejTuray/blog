@@ -1,19 +1,9 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
-import lincolnTheme from "typography-theme-lincoln"
-import zackliveTheme from "typography-theme-zacklive"
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
-    },
-  }
-}
 
-delete Wordpress2016.googleFonts
+import oceanBeachTheme from "typography-theme-ocean-beach"
 
-const typography = new Typography(zackliveTheme)
-
+const typography = new Typography(oceanBeachTheme)
+oceanBeachTheme.headerFontFamily = "Roboto Condensed"
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
   typography.injectStyles()
