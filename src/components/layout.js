@@ -64,14 +64,14 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
+          marginTop: '1rem',
+          marginBottom: '1rem',
+          borderRadius: 10,
+          boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
           maxWidth: rhythm(24),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           textShadow: "none",
-          background: `linear-gradient(
-            to right,
-            #e2e2e2,
-            #c9d6ff
-          )`,
+          
         }}
       >
         <header style={{ textShadow: "none" }}>{header}</header>
