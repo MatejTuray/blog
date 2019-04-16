@@ -68,8 +68,8 @@ class Layout extends React.Component {
           marginBottom: '1rem',
           borderRadius: 10,
           boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          maxWidth: rhythm(48),
+          padding: `5.37rem 1.185rem`,
           textShadow: "none",
           
         }}
