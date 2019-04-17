@@ -11,7 +11,7 @@ description: "Ako si zoptimalizovať asset delivery pre Next.js"
 ---
 Tak robím si ja pekne na mojom malom (relatívne) projekte ktorý beží na Next.js + Express.js serveri, ktorý momentálne beží na Heroku (v blízkej budúcnosti však prejdem na iný spôsob - Docker a nejaká cloud platforma, o tom však inokedy), keď tu zrazu Google Lighthouse, mimochodom úžasný nástroj na benchmarking webových  stránok a aplikácií mi kričí že moje .js súbory nie sú skomprimované.
 
-![](https://i.imgflip.com/20wol6.jpg)
+![](https://memegenerator.net/img/instances/66605245/hold-on-wtf-is-going-on-here.jpg)
 
 Po dni zúriveho debugovania a zisťovania prečo moje krásne webpackom skomprimované gz a br súbory nechce express proste naservírovať klientovi...
 
