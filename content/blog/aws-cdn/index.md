@@ -15,7 +15,7 @@ Tak robím si ja pekne na mojom malom (relatívne) projekte ktorý beží na Nex
 
 Po dni zúriveho debugovania a zisťovania prečo moje krásne webpackom skomprimované gz a br súbory nechce express proste naservírovať klientovi...
 
-~![Express keď mu ponúkam kvalitne skomprimované súbory](https://boodlz.files.wordpress.com/2014/10/30d7a-badwhitekitten2.gif?w=287&h=254)
+![Express keď mu ponúkam kvalitne skomprimované súbory](https://boodlz.files.wordpress.com/2014/10/30d7a-badwhitekitten2.gif?w=287&h=254)
 
 Nakoniec problém bol ako vždy medzi monitorom a stoličkou.
 
