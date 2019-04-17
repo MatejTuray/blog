@@ -9,9 +9,9 @@ tags: ["next.js", "express", "aws"]
 description: "Ako si zoptimalizovať asset delivery pre Next.js"
 
 ---
-Tak robím si ja pekne na mojom malom (relatívne) projekte ktorý beží na Next.js + Express.js serveri, ktorý momentálne beží na Heroku (v blízkej budúcnosti však prejdem na iný spôsob - Docker a nejaká cloud platforma, o tom však inokedy), keď tu zrazu Google Lighthouse[<sup>1</sup>]([https://developers.google.com/web/tools/lighthouse/](https://developers.google.com/web/tools/lighthouse/)), mimochodom úžasný nástroj na benchmarking webových  stránok a aplikácií mi kričí že moje .js súbory nie sú skomprimované.
+Tak robím si ja pekne na mojom malom (relatívne) projekte ktorý beží na Next.js + Express.js serveri, ktorý momentálne beží na Heroku (v blízkej budúcnosti však prejdem na iný spôsob - Docker a nejaká cloud platforma, o tom však inokedy), keď tu zrazu Google Lighthouse, mimochodom úžasný nástroj na benchmarking webových  stránok a aplikácií mi kričí že moje .js súbory nie sú skomprimované.
 
-![Image result for u for real](http://i64.tinypic.com/akc2dl.jpg)
+![](https://i.imgflip.com/20wol6.jpg)
 
 Po dni zúriveho debugovania a zisťovania prečo moje krásne webpackom skomprimované gz a br súbory nechce express proste naservírovať klientovi...
 
