@@ -77,7 +77,7 @@ expressApp.all('/api/*', (req, res) => {
 })
 // catch-all handler to handle all other routes
 expressApp.all('*', (req, res) => {
-    nextApp.setAssetPrefix('d2vs7tv0y2oysm.cloudfront.net')
+    nextApp.setAssetPrefix('cdnUrl')
     let nextRequestHandler = nextApp.getRequestHandler()
 
     return nextRequestHandler(req, res)
