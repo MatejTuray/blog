@@ -2,13 +2,20 @@ module.exports = {
   siteMetadata: {
     title: `Bodka.js`,
     author: `Matej Turay`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: "Osobný blog",
+    siteUrl: `https://matejturay.sk`,
     social: {
       twitter: `MatejTuray`,
     },
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://gmail.us20.list-manage.com/subscribe/post?u=136ad7872b8ae9e3ac32dd28d&id=f3d3b89fc0", // see instructions at official plugin page
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-138502292-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -71,9 +78,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
     },
   ],
 }

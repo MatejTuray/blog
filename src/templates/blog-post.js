@@ -8,6 +8,7 @@ import { rhythm, scale } from "../utils/typography"
 import { DiscussionEmbed } from "disqus-react"
 import Chip from "@material-ui/core/Chip"
 import { withStyles } from "@material-ui/core/styles"
+import Subscribe from "../components/subscribe"
 
 const styles = theme => ({
   root: {
@@ -68,7 +69,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        <Subscribe />
         <ul
           style={{
             display: `flex`,
