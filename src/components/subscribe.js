@@ -87,7 +87,7 @@ class Subscribe extends React.Component {
     if (!this.state.email) {
       this.setState({
         status: `error`,
-        msg: "Please enter valid email!",
+        msg: "Prosím vložte platnú adresu",
       })
     } else {
       this.setState({
