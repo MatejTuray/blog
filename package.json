@@ -39,6 +39,7 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.5.0",
+    "react-scroll-parallax": "^2.1.2",
     "react-social-media-icons": "^1.1.0",
     "react-typography": "^0.16.19",
     "typeface-merriweather": "0.0.72",

@@ -64,17 +64,22 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          marginTop: '1rem',
-          marginBottom: '1rem',
-          borderRadius: 10,         
+          marginTop: "1rem",
+          marginBottom: "1rem",
+          borderRadius: 10,
           maxWidth: rhythm(24),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           textShadow: "none",
-          
         }}
       >
         <header style={{ textShadow: "none" }}>{header}</header>
-        <main style={{ textShadow: "none" }}>{children}</main>
+        <main
+          style={{
+            textShadow: "none",
+          }}
+        >
+          {children}
+        </main>
         <footer style={{ textShadow: "none" }}>
           © {new Date().getFullYear()}, Tento blog poháňa veľký
           {` `}

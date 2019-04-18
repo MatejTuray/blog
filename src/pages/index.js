@@ -23,9 +23,13 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug} style={{ marginBottom: "2rem" }}>
+              <Img
+                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+              />
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4),
+                  marginTop: "2rem",
+                  marginBottom: rhythm(1 / 2),
                 }}
               >
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -37,11 +41,7 @@ class BlogIndex extends React.Component {
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
-              <br />
               <p>{node.frontmatter.date}</p>
-              <Img
-                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
-              />
             </div>
           )
         })}
