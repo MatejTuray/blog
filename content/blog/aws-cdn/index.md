@@ -1,5 +1,4 @@
 ---
-
 title: Vaša osobná CDN na AWS pre Next.js aplikáciu
 
 date: "2019-04-16"
@@ -7,9 +6,10 @@ date: "2019-04-16"
 tags: ["next.js", "express", "aws"]
 
 description: "Ako si zoptimalizovať asset delivery pre Next.js"
-
+featuredImage: "./featured-image.jpg"
 ---
-Tak robím si ja pekne na mojom malom (relatívne) projekte ktorý beží na Next.js + Express.js serveri, ktorý momentálne beží na Heroku (v blízkej budúcnosti však prejdem na iný spôsob - Docker a nejaká cloud platforma, o tom však inokedy), keď tu zrazu Google Lighthouse, mimochodom úžasný nástroj na benchmarking webových  stránok a aplikácií mi kričí že moje .js súbory nie sú skomprimované.
+
+Tak robím si ja pekne na mojom malom (relatívne) projekte ktorý beží na Next.js + Express.js serveri, ktorý momentálne beží na Heroku (v blízkej budúcnosti však prejdem na iný spôsob - Docker a nejaká cloud platforma, o tom však inokedy), keď tu zrazu Google Lighthouse, mimochodom úžasný nástroj na benchmarking webových stránok a aplikácií mi kričí že moje .js súbory nie sú skomprimované.
 
 ![](https://memegenerator.net/img/instances/66605245/hold-on-wtf-is-going-on-here.jpg)
 
@@ -21,7 +21,7 @@ Nakoniec problém bol ako vždy medzi monitorom a stoličkou.
 
 Next.js proste má aj svoje muchy...
 
-###  Remove ahead of time gzip support #1155
+### Remove ahead of time gzip support #1155
 
 Tento pull request ma proste dostal... no dobre takže riešenie je nejaké vlastné CDN.
 
@@ -30,8 +30,6 @@ Predtým som používal CDN na linkovanie libiek a css... teraz som si musel spr
 ### Enter AWS..
 
 ![](https://i.redd.it/gkee3xdcfdz11.png)
-
-
 
 Na spojazdnenie vlastného CDN potrebujeme vlastne len dve veci... no dobre možno tri.. alebo tak nejak.
 
@@ -69,17 +67,17 @@ const nextConfig = {
 Alebo ak máte k next aj vlastný express server a potrebujete niektoré assety neprefixovať tak dynamické prefixovanie:
 
 ```js
-expressApp.all('/api/*', (req, res) => {
-    nextApp.setAssetPrefix('')
-    let nextRequestHandler = nextApp.getRequestHandler()
+expressApp.all("/api/*", (req, res) => {
+  nextApp.setAssetPrefix("")
+  let nextRequestHandler = nextApp.getRequestHandler()
 
-    return nextRequestHandler(req, res)
+  return nextRequestHandler(req, res)
 })
 // catch-all handler to handle all other routes
-expressApp.all('*', (req, res) => {
-    nextApp.setAssetPrefix('cdnUrl')
-    let nextRequestHandler = nextApp.getRequestHandler()
+expressApp.all("*", (req, res) => {
+  nextApp.setAssetPrefix("cdnUrl")
+  let nextRequestHandler = nextApp.getRequestHandler()
 
-    return nextRequestHandler(req, res)
+  return nextRequestHandler(req, res)
 })
 ```

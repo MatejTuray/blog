@@ -3,6 +3,7 @@ title: Pomôž nám Mozilla, si naša jediná nádej!
 date: "2019-04-15"
 tags: ["express", "node.js", "backend"]
 description: "Bezpečnosť stránok a express.js aplikácií"
+featuredImage: "./featured-image.jpg"
 ---
 
 Platím cez internetbanking, odovzdávam svoje osobné údaje "dôveryhodným tretím stranám" a snažím sa nepozastavovať nad tom, či je to bezpečné. Ak si odmyslíme sociálne inžinierstvo, kedy útočný vektor je hlavne ľudský faktor, respektíve jeho zlyhanie (phising a pod.), človek by si myslel, že väčšina veľkých stránok dodržiava tzv. "best practices" bezpečnosti, napríklad TLS/SSL certifikát, HTTPS-only (HSTS)...
