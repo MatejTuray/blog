@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
-
+import { NavigateBefore } from "@material-ui/icons"
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -39,6 +39,8 @@ class Layout extends React.Component {
         <h3
           style={{
             fontFamily: `Roboto Condensed`,
+            ...scale(1.2),
+            marginBottom: rhythm(1.5),
             marginTop: 0,
             color: `#f50057`,
             textShadow: "none",
@@ -54,7 +56,8 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            <NavigateBefore />
+            {"Späť"}
           </Link>
         </h3>
       )

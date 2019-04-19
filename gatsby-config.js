@@ -31,6 +31,47 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-paginate`,
+      options: {
+        sources: [
+          {
+            path: `/page`,
+            pageSize: 1,
+            template: `${__dirname}/src/pages/index.js`,
+            serialize: results => results.allMarkdownRemark.edges,
+            query: `query {
+              site {
+                siteMetadata {
+                  title
+                }
+              }
+              allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+                edges {
+                  node {
+                    excerpt
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      date(formatString: "DD.MM.YYYY")
+                      title
+                      description
+                      featuredImage {
+                        childImageSharp {
+                          sizes(maxWidth: 630) {
+                            ...GatsbyImageSharpSizes
+                          }
+                        }
+                      }
+                    }
+                  }
+                }`,
+          },
+        ],
+      },
+    },
+
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
