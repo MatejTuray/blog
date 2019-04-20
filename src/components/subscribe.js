@@ -1,10 +1,7 @@
 import React, { Component } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
-import PropTypes from "prop-types"
-import classNames from "classnames"
 import { withStyles } from "@material-ui/core/styles"
 import Fab from "@material-ui/core/Fab"
-import Input from "@material-ui/core/Input"
 import { NotificationsActive } from "@material-ui/icons"
 import Dialog from "./dialog"
 const styles = theme => ({
