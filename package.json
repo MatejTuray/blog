@@ -32,8 +32,6 @@
     "gatsby-transformer-remark": "^2.3.2",
     "gatsby-transformer-sharp": "^2.1.17",
     "lodash": "^4.17.11",
-    "material-ui-flat-pagination": "^3.2.0",
-    "material-ui-pagination": "^1.1.6",
     "moment": "^2.24.0",
     "prism-themes": "^1.1.0",
     "prismjs": "^1.15.0",

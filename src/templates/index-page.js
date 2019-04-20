@@ -5,29 +5,20 @@ import SEO from "../components/seo"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import { rhythm } from "../utils/typography"
-import CssBaseline from "@material-ui/core/CssBaseline"
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
-import Pagination from "material-ui-flat-pagination"
-const theme = createMuiTheme()
+
 class PaginatedIndex extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = { offset: 0 }
   }
-  handleClick(offset, page) {
-    console.log(offset, page)
-    console.log(this.props)
-    this.setState({ offset: offset })
-    navigate(`/${page === 1 ? "" : page}`)
-    console.log("click")
-  }
 
   render() {
     const { data } = this.props
+    const props = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    const { currentPage, numPages } = this.props.pageContext
+    const { currentPage, numPages } = props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
     const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
@@ -66,37 +57,25 @@ class PaginatedIndex extends React.Component {
             </div>
           )
         })}
-        {/* <div
+        <div
           style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "flex-start",
+            padding: "1rem",
           }}
         >
-          <MuiThemeProvider theme={theme}>
-            <CssBaseline />
-            <Pagination
-              limit={1}
-              offset={this.state.offset}
-              total={numPages}
-              onClick={(e, offset, page) => {
-                console.log(offset, page)
-                this.handleClick(offset, page)
-              }}
-            />
-          </MuiThemeProvider>
-        </div> */}
-
-        {!isFirst && (
-          <Link to={prevPage} rel="prev">
-            ← Novšie príspevky
-          </Link>
-        )}
-        {!isLast && (
-          <Link to={nextPage} rel="next">
-            Staršie príspevky
-          </Link>
-        )}
+          {!isFirst && (
+            <Link to={prevPage} rel="prev">
+              ← Novšie príspevky
+            </Link>
+          )}
+          {!isLast && (
+            <Link to={nextPage} rel="next">
+              Staršie príspevky →
+            </Link>
+          )}
+        </div>
       </Layout>
     )
   }
