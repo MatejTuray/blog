@@ -71,7 +71,7 @@ module.exports = {
         name: "Bodka.js - Matej Turay",
         short_name: `"Bodka.js`,
         start_url: `/`,
-        background_color: `#f50057`,
+        background_color: `#ffffff`,
         theme_color: `#f50057`,
         display: `minimal-ui`,
         icon: `content/assets/favicon.png`,
