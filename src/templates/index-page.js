@@ -1,17 +1,24 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
+import { Link, graphql, navigate } from "gatsby"
+import Img from "gatsby-image"
 import SEO from "../components/seo"
-import Bio from "../components/Bio"
-import Layout from "../components/Layout"
+import Bio from "../components/bio"
+import Layout from "../components/layout"
 import { rhythm } from "../utils/typography"
 
-class IndexPage extends React.Component {
+class PaginatedIndex extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = { offset: 0 }
+  }
+
   render() {
     const { data } = this.props
+    const props = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    const { currentPage, numPages } = this.props.pageContext
+    const { currentPage, numPages } = props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
     const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
@@ -20,76 +27,63 @@ class IndexPage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title={siteTitle}
+          title="Domov"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div key={node.fields.slug} style={{ marginBottom: "2rem" }}>
+              <Img
+                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+              />
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4),
+                  marginTop: "2rem",
+                  marginBottom: rhythm(1 / 2),
                 }}
               >
-                <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
+              <p>{node.frontmatter.date}</p>
             </div>
           )
         })}
-        <ul
+        <div
           style={{
             display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            alignItems: "center",
-            listStyle: "none",
-            padding: 0,
+            justifyContent: "center",
+            alignItems: "flex-start",
+            padding: "1rem",
           }}
         >
           {!isFirst && (
             <Link to={prevPage} rel="prev">
-              ← Previous Page
+              ← Novšie príspevky
             </Link>
           )}
-          {Array.from({ length: numPages }, (_, i) => (
-            <li
-              key={`pagination-number${i + 1}`}
-              style={{
-                margin: 0,
-              }}
-            >
-              <Link
-                to={`/${i === 0 ? "" : i + 1}`}
-                style={{
-                  padding: rhythm(1 / 4),
-                  textDecoration: "none",
-                  color: i + 1 === currentPage ? "#ffffff" : "",
-                  background: i + 1 === currentPage ? "#007acc" : "",
-                }}
-              >
-                {i + 1}
-              </Link>
-            </li>
-          ))}
           {!isLast && (
             <Link to={nextPage} rel="next">
-              Next Page →
+              Staršie príspevky →
             </Link>
           )}
-        </ul>
+        </div>
       </Layout>
     )
   }
 }
+export default PaginatedIndex
 
-const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+export const pageQuery = graphql`
+  query($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -102,13 +96,20 @@ const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "DD.MM.YYYY")
             title
+            description
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

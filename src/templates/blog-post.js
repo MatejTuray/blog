@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
@@ -9,9 +8,7 @@ import { DiscussionEmbed } from "disqus-react"
 import Chip from "@material-ui/core/Chip"
 import { withStyles } from "@material-ui/core/styles"
 import Subscribe from "../components/subscribe"
-import Portal from "@material-ui/core/Portal"
 import Share from "../components/share"
-
 const styles = theme => ({
   root: {
     display: "flex",
@@ -20,6 +17,8 @@ const styles = theme => ({
   },
   chip: {
     margin: theme.spacing.unit,
+    backgroundColor: "#512DA8",
+    color: "white",
   },
   fab: {
     margin: theme.spacing.unit,
@@ -69,11 +68,7 @@ class BlogPostTemplate extends React.Component {
 
           <ul style={{ marginTop: `1rem` }}>
             {post.frontmatter.tags.map(tag => (
-              <Chip
-                label={tag}
-                className={this.props.classes.chip}
-                color="secondary"
-              />
+              <Chip label={tag} className={this.props.classes.chip} />
             ))}
           </ul>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />

@@ -16,7 +16,7 @@ class Layout extends React.Component {
             ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
-            color: `#f50057`,
+            color: `#512DA8`,
             textShadow: "none",
           }}
         >
@@ -42,7 +42,7 @@ class Layout extends React.Component {
             ...scale(1.2),
             marginBottom: rhythm(1.5),
             marginTop: 0,
-            color: `#f50057`,
+            color: `#512DA8`,
             textShadow: "none",
           }}
         >
@@ -83,7 +83,7 @@ class Layout extends React.Component {
         >
           {children}
         </main>
-        <footer style={{ textShadow: "none" }}>
+        <footer style={{ textShadow: "none", marginTop: "5rem" }}>
           <BottomAppBar location={location} />
         </footer>
       </div>

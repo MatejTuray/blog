@@ -1,10 +1,7 @@
 import React, { Component } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
-import PropTypes from "prop-types"
-import classNames from "classnames"
 import { withStyles } from "@material-ui/core/styles"
 import Fab from "@material-ui/core/Fab"
-import Input from "@material-ui/core/Input"
 import { NotificationsActive } from "@material-ui/icons"
 import Dialog from "./dialog"
 const styles = theme => ({
@@ -25,6 +22,11 @@ const styles = theme => ({
   },
   margin: {
     margin: theme.spacing.unit,
+    backgroundColor: "#5e35b1",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#673ab7",
+    },
   },
   extendedIcon: {
     marginRight: theme.spacing.unit,
@@ -132,7 +134,6 @@ class Subscribe extends React.Component {
             >
               <Fab
                 variant="extended"
-                color="secondary"
                 aria-label="Add"
                 className={classes.margin}
                 onClick={this.handleClickOpen}

@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography"
 import Arrow from "@material-ui/icons/ArrowUpwardOutlined"
 import PropTypes from "prop-types"
 import React from "react"
+import IconButton from "@material-ui/core/IconButton"
+import MenuIcon from "@material-ui/icons/Menu"
 import { Link, animateScroll as scroll } from "react-scroll"
 const styles = theme => ({
   text: {
@@ -20,11 +22,11 @@ const styles = theme => ({
     top: "auto",
     paddingTop: "0.5rem",
     bottom: 0,
-    backgroundColor: "#f50057;",
+    backgroundColor: "#512DA8",
   },
   toolbar: {
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
   },
   fabButton: {
     position: "absolute",
@@ -33,6 +35,11 @@ const styles = theme => ({
     left: 0,
     right: 0,
     margin: "0 auto",
+    backgroundColor: "#5e35b1",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#673ab7",
+    },
   },
 })
 
@@ -75,7 +82,6 @@ class BottomAppBar extends React.Component {
 
             {this.state.visible ? (
               <Fab
-                color="primary"
                 aria-label="Up"
                 className={classes.fabButton}
                 onClick={() => this.handleScrollToTop()}
@@ -97,3 +103,7 @@ BottomAppBar.propTypes = {
 }
 
 export default withStyles(styles)(BottomAppBar)
+
+// <IconButton color="inherit" aria-label="Open drawer">
+//               <MenuIcon />
+//             </IconButton>

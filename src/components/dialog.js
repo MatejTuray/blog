@@ -10,7 +10,7 @@ import { withStyles } from "@material-ui/core/styles"
 const styles = theme => ({
   label: {
     "&$focusedLabel": {
-      color: "#f50057",
+      color: "#5e35b1",
     },
     "&$erroredLabel": {
       color: "orange",
@@ -23,10 +23,13 @@ const styles = theme => ({
       borderBottomColor: "orange",
     },
     "&:after": {
-      borderBottom: `2px solid #f50057`,
+      borderBottom: `2px solid #5e35b1`,
     },
   },
   error: {},
+  button: {
+    color: "#5e35b1",
+  },
 })
 
 class FormDialog extends React.Component {
@@ -65,18 +68,21 @@ class FormDialog extends React.Component {
               id="name"
               label="Email"
               type="email"
-              color="secondary"
+              color="#5e35b1"
               onChange={e => this.props._handleEmailChange(e)}
               fullWidth
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => this.props.handleClose()} color="secondary">
+            <Button
+              onClick={() => this.props.handleClose()}
+              className={classes.button}
+            >
               Zrušiť
             </Button>
             <Button
               onClick={e => this.props._handleFormSubmit(e)}
-              color="secondary"
+              className={classes.button}
             >
               Aktivovať
             </Button>
