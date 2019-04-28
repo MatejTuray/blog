@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import BottomAppBar from "./footer"
 import { rhythm, scale } from "../utils/typography"
 import { NavigateBefore } from "@material-ui/icons"
 class Layout extends React.Component {
@@ -84,11 +84,7 @@ class Layout extends React.Component {
           {children}
         </main>
         <footer style={{ textShadow: "none" }}>
-          © {new Date().getFullYear()}, Tento blog poháňa veľký
-          {` `}
-          <a style={{ textShadow: "none" }} href="https://www.gatsbyjs.org">
-            Gatsby
-          </a>
+          <BottomAppBar location={location} />
         </footer>
       </div>
     )

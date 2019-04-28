@@ -10,6 +10,7 @@ import Chip from "@material-ui/core/Chip"
 import { withStyles } from "@material-ui/core/styles"
 import Subscribe from "../components/subscribe"
 import Portal from "@material-ui/core/Portal"
+import Share from "../components/share"
 
 const styles = theme => ({
   root: {
@@ -31,6 +32,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+    const siteUrl = this.props.data.site.siteMetadata.siteUrl
     const { previous, next } = this.props.pageContext
     const disqusShortname = "matejturay"
     const disqusConfig = {
@@ -75,9 +77,20 @@ class BlogPostTemplate extends React.Component {
             ))}
           </ul>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+          <Share
+            socialConfig={{
+              config: {
+                title: post.frontmatter.title,
+                url: siteUrl + post.fields.slug,
+              },
+            }}
+            tags={post.frontmatter.tags}
+          />
           <hr
             style={{
-              marginBottom: rhythm(1),
+              marginTop: rhythm(1.2),
+              marginBottom: rhythm(1.2),
             }}
           />
           <Subscribe />
@@ -120,6 +133,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
